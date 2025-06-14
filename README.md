@@ -54,5 +54,21 @@ Pass a job flow like
     }
 ]
 ```
+## Start the server
 
+Just run the controller
+
+```
+python controller.py
+```
+
+## Now make a client connect to it and send it a list of jobs
+
+Via the cleverly named client.py
+
+```
+python client.py
+```
+
+Note that the client returns immediately, but the jobs are running both sequentially and concurrently on the server
 
