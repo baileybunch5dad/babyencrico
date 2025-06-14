@@ -49,8 +49,12 @@ def main():
         # Create and send the request
         request = nuclear_pb2.SendFlowRequest(tasklist=grpctasklist)
         response = stub.SendFlow(request)
-
         print("Server response:", response.message)
+
+        request = nuclear_pb2.ExecuteTaskRequest(id='A', tasklist=grpctasklist)
+        response = stub.ExecuteTask(request)
+        print("Server response:", response.message)
+
 
 
 if __name__ == "__main__":

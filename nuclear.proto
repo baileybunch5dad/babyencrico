@@ -7,6 +7,16 @@ package nuclear;
 service Physicist {
   // Sends a list of tasks
   rpc SendFlow(SendFlowRequest) returns (SendFlowReply) {}
+  rpc ExecuteTask(ExecuteTaskRequest) returns(ExecuteTaskReply) {}
+}
+
+message ExecuteTaskRequest {
+  string id = 1;
+  repeated Task tasklist = 2;
+}
+
+message ExecuteTaskReply {
+  string message = 1;
 }
 
 // The input request parameter to the SendFlow function
