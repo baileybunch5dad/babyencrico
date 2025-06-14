@@ -7,12 +7,12 @@ package nuclear;
 service Physicist {
   // Sends a list of tasks
   rpc SendFlow(SendFlowRequest) returns (SendFlowReply) {}
+  rpc GetFlow(GetFlowRequest) returns (GetFlowReply) {}
   rpc ExecuteTask(ExecuteTaskRequest) returns(ExecuteTaskReply) {}
 }
 
 message ExecuteTaskRequest {
   string id = 1;
-  repeated Task tasklist = 2;
 }
 
 message ExecuteTaskReply {
@@ -34,4 +34,11 @@ message Task {
 // The output response from the SendFlow function
 message SendFlowReply {
   string message = 1;
+}
+
+message GetFlowRequest {
+}
+
+message GetFlowReply {
+  repeated Task tasklist = 1;
 }

@@ -16,8 +16,8 @@ def main():
         },
         {
             "id": "C",
-            "payload": "Requirement analysis",
-            "successors": ["D"]
+            "payload": "Documentation",
+            "successors": []
         },
         {
             "id": "D",
@@ -51,7 +51,7 @@ def main():
         response = stub.SendFlow(request)
         print("Server response:", response.message)
 
-        request = nuclear_pb2.ExecuteTaskRequest(id='A', tasklist=grpctasklist)
+        request = nuclear_pb2.ExecuteTaskRequest(id='A')
         response = stub.ExecuteTask(request)
         print("Server response:", response.message)
 
