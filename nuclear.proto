@@ -1,0 +1,27 @@
+
+syntax = "proto3";
+
+package nuclear;
+
+// The job flow grpc api.
+service Physicist {
+  // Sends a list of tasks
+  rpc SendFlow(SendFlowRequest) returns (SendFlowReply) {}
+}
+
+// The input request parameter to the SendFlow function
+message SendFlowRequest {
+  repeated Task tasklist = 1;
+}
+
+message Task {
+    string id = 1;
+    string payload = 2;
+    repeated string successors = 3;
+}
+
+
+// The output response from the SendFlow function
+message SendFlowReply {
+  string message = 1;
+}
